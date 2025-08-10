@@ -15,7 +15,7 @@ export default function Hero() {
     }
   }, []); // run once after mount
   return (
-    <section className="hero flex">
+    <section id="hero" className="hero flex">
       <div className="left-section">
         <div className="parent-avatar flex">
           <motion.img
@@ -31,16 +31,15 @@ export default function Hero() {
         <motion.h1
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 0.5 }}
           className="title"
         >
-          Software designer, founder, and amateur astronaut.
+          Software developer,tech innovator.
         </motion.h1>
         <p className="sub-title">
-          I'm Yassine Malal, a software Developper and entrepreneur based in New
-          York City, I'm the Founder and CEO of Planetanias, Where we develop
-          technologies that winpower regular people to explore space co their
-          gen terms
+          I am Yassine Malal,a computer science student and
+          full-stack developer passionate about building dynamic web, mobile,
+          and desktop applications; 
         </p>
         <div className="all-icons flex">
           <a

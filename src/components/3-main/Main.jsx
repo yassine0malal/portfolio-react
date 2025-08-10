@@ -19,7 +19,7 @@ const Main = () => {
   };
 
   return (
-    <main className="flex">
+    <main id="main" className="flex">
       <section className="left-section  flex">
         <button
           onClick={() => {
@@ -65,7 +65,7 @@ const Main = () => {
         </button>
         <button
           onClick={() => {
-            handleClick("Node");
+            handleClick("node");
           }}
           className={currentActive === "node" ? "active" : null}
         >

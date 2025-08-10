@@ -9,8 +9,8 @@ export default function Contact() {
   const [state, handleSubmit] = useForm("mldlalaz");
 
   return (
-    <section className="contact-us">
-      <h1>
+    <section id="contact-us" className="contact-us">
+      <h1 className="title">
         <span className="icon-envelope"></span>Contact us
       </h1>
       <p className="sub-title">
@@ -58,7 +58,7 @@ export default function Contact() {
             </p>
           )}
         </form>
-        <div className="border animation">
+        <div className=" animation">
           <Lottie
           className="contact-animation"
                 loop={true}
