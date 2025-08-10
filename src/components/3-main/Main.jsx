@@ -1,21 +1,21 @@
 import { useState } from "react";
 import "./main.css";
 import { myProjects } from "./myProjects";
+import { AnimatePresence, motion, scale } from "framer-motion";
 
 const Main = () => {
   // @ts-ignore
   const [currentActive, setCurrentActive] = useState("all");
   const [arr, setArr] = useState(myProjects);
   const handleClick = (category) => {
-  
-  setCurrentActive(category);
-      const newArr = myProjects.filter((item) => {
-        const itemCategory = item.category.find((cat) => {
-          return cat === category;
-        });
-        return itemCategory === category ;
+    setCurrentActive(category);
+    const newArr = myProjects.filter((item) => {
+      const itemCategory = item.category.find((cat) => {
+        return cat === category;
       });
-            setArr(newArr);
+      return itemCategory === category;
+    });
+    setArr(newArr);
   };
 
   return (
@@ -41,7 +41,7 @@ const Main = () => {
 
         <button
           onClick={() => {
-            handleClick("react"); 
+            handleClick("react");
           }}
           className={currentActive === "react" ? "active" : null}
         >
@@ -57,11 +57,11 @@ const Main = () => {
         </button>
         <button
           onClick={() => {
-            handleClick("JS");
+            handleClick("js");
           }}
-          className={currentActive === "js" ? "active" : null}
+          className={currentActive === "javaScript" ? "active" : null}
         >
-          JS
+          JavaScript
         </button>
         <button
           onClick={() => {
@@ -71,13 +71,19 @@ const Main = () => {
         >
           Node & Express
         </button>
-        
       </section>
 
       <section className="right-section flex ">
-        {arr.map((item) => {
+        <AnimatePresence>
+          {arr.map((item) => {
           return (
-            <article key={item.imgPath} className="card ">
+
+            <motion.article
+            layout
+            initial={{transform:"scale(0)"}}
+            animate={{transform:"scale(1)"}}
+            transition={{type:"spring", damping:8, stiffness:50}}
+             key={item.imgPath} className="card ">
               <img src={item.imgPath} width={266} alt="" />
               <div className="box" style={{ width: "266px" }}>
                 <h1 className="title">{item.projectTitle}</h1>
@@ -99,9 +105,10 @@ const Main = () => {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           );
         })}
+        </AnimatePresence>
       </section>
     </main>
   );
