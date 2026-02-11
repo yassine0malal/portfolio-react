@@ -7,10 +7,11 @@ export default function Footer() {
     <ul className='flex'>
       <li><a href="#hero">About</a></li>
       <li><a href="#main">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact-us">Contact us</a></li>
     </ul>
 
-    <p>© 2025 Yassine Malal. All rights reserved.</p>
+    <p>© 2026 Yassine Malal. All rights reserved.</p>
     </footer> 
   )
 }

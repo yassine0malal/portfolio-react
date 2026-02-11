@@ -27,19 +27,19 @@ export default function Header() {
           <ul className="flex">
             
             <li>
-              <a href="">About</a>
+              <a href="#hero">About</a>
             </li>
             <li>
-              <a href="">Articles</a>
+              <a href="#main">Projects</a>
             </li>
             <li>
-              <a href="">Projects</a>
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              <a href="">Speaking</a>
+              <a href="#contact-us">Contact</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#me">Me</a>
             </li>
           </ul>
         </nav>
